@@ -22,7 +22,7 @@ export async function signIn(req, res) {
 
   try {
     await sessionsCollection.insertOne({ userId: user._id, token });
-    res.send({ token });
+    res.send({ token: token, name: user.name });
   } catch (error) {
     console.error(error);
     res.status(500).send("Deu problema no servidor");
