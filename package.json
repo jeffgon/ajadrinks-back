@@ -1,7 +1,6 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -21,5 +20,14 @@
     "mongodb": "^4.13.0",
     "nodemon": "^2.0.20",
     "uuid": "^9.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffgon/ajadrinks-back.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffgon/ajadrinks-back/issues"
+  },
+  "homepage": "https://github.com/jeffgon/ajadrinks-back#readme",
+  "description": ""
 }

@@ -1,6 +1,29 @@
 import { ObjectId } from "mongodb";
 import { productsCollection } from "../database/db.js";
 
+export  async function registerProduct(req, res){
+  const newProduct = req.body;
+  const checkSession = res.locals.sessions; //conferir
+
+  try{
+    const dataProduct = await productsCollection.insertOne(
+      {
+        title: newProduct.title,
+        image: newProduct.image,
+        category: newProduct.category,
+        shortdescription: newProduct.shortdescription,
+        description: newProduct.description,
+        price: newProduct.price
+      }
+    )
+    console.log(dataProduct);
+    res.status(200).send("Novo produto cadastrado")
+  }catch(error){
+    res.status(500).send(error.message);
+  }
+}
+
+
 export async function getProducts(req, res) {
   try {
     const products = await productsCollection.find().toArray();
@@ -26,3 +49,4 @@ export async function getProductById(req, res) {
     res.sendStatus(500);
   }
 }
+
