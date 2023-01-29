@@ -28,3 +28,4 @@ export async function signIn(req, res) {
     res.status(500).send("Deu problema no servidor");
   }
 }
+
