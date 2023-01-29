@@ -8,7 +8,7 @@ import {
 const router = Router();
 
 router.post("/sign-up", userSchemaValidation, signUp);
-router.post("/sign-in", signInBodyValidation, signIn);
+router.post("/", signInBodyValidation, signIn);
 
 
 export default router;
