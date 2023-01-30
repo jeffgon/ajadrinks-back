@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import productsRoutes from "./routes/productsRoutes.js";
-import paymentRoutes from "./routes/paymentRoutes.js"
+import paymentRoutes from "./routes/paymentRoutes.js";
 
 dotenv.config();
 

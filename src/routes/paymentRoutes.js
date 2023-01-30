@@ -6,7 +6,7 @@ import { payment } from "../controllers/paymentController.js";
 
 const router = Router();
 
-router.use(authRoutesValidation)
-router.post("/payment", validateSchema(paymentSchema), payment)
+router.use(authRoutesValidation);
+router.post("/checkout", validateSchema(paymentSchema), payment);
 
 export default router;
