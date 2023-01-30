@@ -6,8 +6,15 @@ export  async function registerProduct(req, res){
   const checkSession = res.locals.sessions; //conferir
 
   try{
+    const checkExistingProduct = await productsCollection.findOne({
+      title: newProduct.title
+    });
+    if (checkExistingProduct){
+      return res.status(400).send("Produto já cadastrado")
+    }
     const dataProduct = await productsCollection.insertOne(
       {
+        idUser: checkSession.idUser,
         title: newProduct.title,
         image: newProduct.image,
         category: newProduct.category,

@@ -14,5 +14,6 @@ app.use(cors());
 
 app.use([authRoutes, productsRoutes, paymentRoutes]);
 
-const port = process.env.PORT;
+//const port = process.env.PORT;
+const port = 5000;
 app.listen(port, () => console.log(`Server running in port ${port}`));
